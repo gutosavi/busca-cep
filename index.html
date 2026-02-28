@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Buscador CEP</title>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="#animais">Linkedin →</a></li>
+        <li><a href="#faq">GitHub →</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <section class="container-busca">
+      <form action="" id="formulario">
+        <h1>Busca CEP</h1>
+        <div class="input-box">
+          <label for="logradouro">Logradouro</label>
+          <input
+            type="text"
+            name="logradouro"
+            id="input-logradouro"
+            placeholder="Digite o logradouro"
+          />
+        </div>
+        <div class="input-box">
+          <label for="bairro">Bairro</label>
+          <input
+            type="text"
+            name="bairro"
+            id="input-bairro"
+            placeholder="Digite o bairro"
+          />
+        </div>
+        <div class="input-box">
+          <label for="cidade">Cidade</label>
+          <input
+            type="text"
+            name="cidade"
+            id="input-cidade"
+            placeholder="Digite a cidade"
+          />
+        </div>
+        <div class="input-box">
+          <label for="uf">UF</label>
+          <input
+            type="text"
+            name="uf"
+            id="input-uf"
+            placeholder="Digite o Estado"
+          />
+        </div>
+        <button type="submit" class="btn">Buscar</button>
+        <div class="msg-erro"></div>
+      </form>
+    </section>
+    <script type="module" src="assets/js/script.js"></script>
+  </body>
+</html>
