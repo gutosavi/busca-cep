@@ -1,5 +1,3 @@
-import initValid from "./validacoes.js";
-
 export default async function initApi() {
   const nomeCidade = document.getElementById("input-cidade").value;
   const uf = document.getElementById("input-uf").value;
@@ -11,6 +9,7 @@ export default async function initApi() {
   try {
     const results = await fetch(apiURL);
     const json = await results.json();
+    console.log(json, "Testando");
 
     const filtrado = bairro
       ? json.filter((item) =>
@@ -20,7 +19,11 @@ export default async function initApi() {
 
     mostraResultado(filtrado);
   } catch (error) {
-    console.log("Erro", error);
+    const capturaErro = error;
+    if (capturaErro) {
+      resultadoNegativo("*Nenhum resultado encontrado*");
+      console.log("Erro", error);
+    }
   }
 }
 
@@ -40,4 +43,9 @@ function mostraResultado(json) {
       </div>
     `;
   });
+}
+
+function resultadoNegativo(msg) {
+  const msgErro = document.querySelector(".msg-erro");
+  msgErro.innerHTML = msg;
 }

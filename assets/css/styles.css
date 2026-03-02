@@ -173,6 +173,15 @@ strong {
   margin-left: 5px;
 }
 
+.msg-erro {
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .copy {
   grid-column: 3 / 5;
   width: 100%;
