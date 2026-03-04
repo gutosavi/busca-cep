@@ -11,7 +11,7 @@ export default function initDropdownMenu() {
 function handleClick(e) {
   e.preventDefault();
   e.stopPropagation();
-  e.currentTarget.classList.add("ativo");
+  e.currentTarget.classList.toggle("ativo");
   outsideClick(e.currentTarget);
 }
 
