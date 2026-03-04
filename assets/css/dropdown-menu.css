@@ -2,7 +2,7 @@
   position: relative;
 }
 
-[data-dropdown] .about-me::before {
+[data-dropdown] .about-me::after {
   content: "Sobre mim ↴";
 }
 

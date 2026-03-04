@@ -1,3 +1,5 @@
+const aboutMe = document.querySelector(".about-me");
+
 export default function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll("[data-dropdown]");
 
@@ -12,6 +14,7 @@ function handleClick(e) {
   e.preventDefault();
   e.stopPropagation();
   e.currentTarget.classList.toggle("ativo");
+  aboutMe.classList.toggle("ativo");
   outsideClick(e.currentTarget);
 }
 
