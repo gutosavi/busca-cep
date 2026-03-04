@@ -1,5 +1,6 @@
 import initApi from "./modules/api-cep.js";
 import validaFormulario from "./modules/validacoes.js";
+import initDropdownMenu from "./modules/dropdown-menu.js";
 
 function initSearch() {
   document.querySelector("#formulario").addEventListener("submit", (e) => {
@@ -9,4 +10,7 @@ function initSearch() {
   });
 }
 
-initSearch();
+document.addEventListener("DOMContentLoaded", () => {
+  initDropdownMenu();
+  initSearch();
+});
