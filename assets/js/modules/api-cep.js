@@ -4,12 +4,11 @@ export default async function initApi() {
   const logradouro = document.getElementById("input-logradouro").value;
   const bairro = document.getElementById("input-bairro").value;
 
-  const apiURL = `https://viacep.com.br/ws/${uf}/${nomeCidade}/${logradouro}/json/`;
+  const apiURL = `https://viacep.com.br/ws/${encodeURI(uf)}/${encodeURI(nomeCidade)}/${encodeURI(logradouro)}/json/`;
 
   try {
     const results = await fetch(apiURL);
     const json = await results.json();
-    console.log(json, "Testando");
 
     const filtrado = bairro
       ? json.filter((item) =>

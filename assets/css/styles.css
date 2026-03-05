@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "dropdown-menu.css";
 
 * {
@@ -14,6 +15,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   place-items: center;
   background: url(../img/background-image-4.jpg) no-repeat center center fixed;
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -32,7 +34,8 @@ section.container-busca {
 section h1 {
   text-align: center;
   font-size: 36px;
-  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
   padding-bottom: 20px;
 }
 
@@ -46,8 +49,9 @@ section h1 {
 
 .input-box label {
   font-size: 16px;
+  font-family: "Poppins", sans-serif;
   margin: 14px 0px 5px 2px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .input-box input {
@@ -93,6 +97,7 @@ section h1 {
   text-transform: uppercase;
   background-color: #fb5;
   color: #222;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 5px;
@@ -149,6 +154,10 @@ section h1 {
 
 .resultado-busca {
   margin: 30px 0px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .resultado-busca div {
@@ -157,6 +166,7 @@ section h1 {
 
 .resultado-busca div p {
   color: #222;
+  font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.2;
