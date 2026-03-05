@@ -3,6 +3,8 @@ export default async function initApi() {
   const uf = document.getElementById("input-uf").value;
   const logradouro = document.getElementById("input-logradouro").value;
   const bairro = document.getElementById("input-bairro").value;
+  const msgErro = document.querySelector(".msg-erro");
+  msgErro.innerHTML = "";
 
   const apiURL = `https://viacep.com.br/ws/${encodeURI(uf)}/${encodeURI(nomeCidade)}/${encodeURI(logradouro)}/json/`;
 
@@ -16,6 +18,10 @@ export default async function initApi() {
         )
       : json;
 
+    if (filtrado.length === 0) {
+      resultadoNegativo("*Nenhum resultado encontrado*");
+      return;
+    }
     mostraResultado(filtrado);
   } catch (error) {
     const capturaErro = error;
