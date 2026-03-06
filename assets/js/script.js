@@ -1,6 +1,7 @@
 import initApi from "./modules/api-cep.js";
 import validaFormulario from "./modules/validacoes.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
+import initMenuMobile from "./modules/menu.mobile.js";
 
 function initSearch() {
   document.querySelector("#formulario").addEventListener("submit", (e) => {
@@ -12,5 +13,6 @@ function initSearch() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initDropdownMenu();
+  initMenuMobile();
   initSearch();
 });

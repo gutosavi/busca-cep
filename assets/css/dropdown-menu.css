@@ -2,14 +2,6 @@
   position: relative;
 }
 
-[data-dropdown] .about-me::after {
-  content: "Sobre mim ↴";
-}
-
-[data-dropdown] .about-me.ativo::after {
-  content: "Sobre mim ↰";
-}
-
 [data-dropdown] .dropdown-menu {
   display: none;
 }
