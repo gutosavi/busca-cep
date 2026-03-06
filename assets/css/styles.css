@@ -168,9 +168,10 @@ section h1 {
 .resultado-busca div p {
   color: #222;
   font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.2;
+  padding-left: 10px;
 }
 
 strong {

@@ -7,8 +7,8 @@ export default function initMenuMobile() {
 
   if (menuButton) {
     function openMenu(e) {
-      menuButton.classList.toggle("ativo");
       menuList.classList.toggle("ativo");
+      menuButton.classList.toggle("ativo");
       e.preventDefault();
       e.stopPropagation();
       outsideClick(menuList);

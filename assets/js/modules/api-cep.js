@@ -3,8 +3,9 @@ export default async function initApi() {
   const uf = document.getElementById("input-uf").value;
   const logradouro = document.getElementById("input-logradouro").value;
   const bairro = document.getElementById("input-bairro").value;
-  const msgErro = document.querySelector(".msg-erro");
-  msgErro.innerHTML = "";
+
+  limpaResultado();
+  setMsgErro("");
 
   const apiURL = `https://viacep.com.br/ws/${encodeURI(uf)}/${encodeURI(nomeCidade)}/${encodeURI(logradouro)}/json/`;
 
@@ -19,38 +20,46 @@ export default async function initApi() {
       : json;
 
     if (filtrado.length === 0) {
-      resultadoNegativo("*Nenhum resultado encontrado*");
+      setMsgErro("*Nenhum resultado encontrado*");
       return;
     }
+
     mostraResultado(filtrado);
   } catch (error) {
-    const capturaErro = error;
-    if (capturaErro) {
-      resultadoNegativo("*Nenhum resultado encontrado*");
-      console.log("Erro", error);
-    }
+    console.error("Erro na requisição:", error);
+    setMsgErro("*Nenhum resultado encontrado*");
   }
 }
 
 function mostraResultado(json) {
   const form = document.querySelector("#formulario");
+
+  const resultadoExistente = form.querySelector(".resultado-busca");
+  if (resultadoExistente) resultadoExistente.remove();
+
   const div = document.createElement("div");
   div.classList.add("resultado-busca");
-  form.appendChild(div);
 
   json.forEach((item) => {
     div.innerHTML += `
-      <div class="res-item">
-        <p><strong>CEP:</strong> ${item.cep}</p>
-        <p><strong>Logradouro:</strong> ${item.logradouro}</p>
-        <p><strong>Bairro:</strong> ${item.bairro}</p>
-        <p><strong>Complemento:</strong> ${item.complemento}</p>
-      </div>
+    <div class="res-item">
+    <p><strong>CEP:</strong> ${item.cep}</p>
+    <p><strong>Logradouro:</strong> ${item.logradouro}</p>
+    <p><strong>Bairro:</strong> ${item.bairro}</p>
+    <p><strong>Complemento:</strong> ${item.complemento}</p>
+    </div>
     `;
   });
+
+  form.appendChild(div);
 }
 
-function resultadoNegativo(msg) {
+function setMsgErro(msg) {
   const msgErro = document.querySelector(".msg-erro");
-  msgErro.innerHTML = msg;
+  if (msgErro) msgErro.innerHTML = msg;
+}
+
+function limpaResultado() {
+  const resultado = document.querySelector(".resultado-busca");
+  if (resultado) resultado.remove();
 }
