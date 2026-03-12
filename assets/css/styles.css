@@ -30,6 +30,7 @@ section.container-busca {
   border-radius: 10px;
   padding: 30px 40px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  animation: show-up 0.3s forwards;
 }
 
 section h1 {
@@ -226,5 +227,16 @@ strong {
 
   .menu {
     margin-top: 0px;
+  }
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
