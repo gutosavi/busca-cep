@@ -56,22 +56,104 @@ https://viacep.com.br/ws/uf/cidade/logradouro/json/
 
 ---
 
-## 📦 Funcionalidades
+## Funcionalidades
 
-✔️ Busca endereço por  
-✔️ Exibe:
+Busca CEP por Logradouro, Bairro, Cidade, UF
+Exibe:
 
 - Logradouro
 - Bairro
 - Cidade
 - Estado (UF)
 
-✔️ Validação de campo vazio  
-✔️ Tratamento para CEP inválido  
-✔️ Interface moderna  
-✔️ Navegação com dropdown  
-✔️ Menu responsivo para mobile
+Validação de campo vazio  
+Tratamento para CEP inválido  
+Interface moderna  
+Navegação com dropdown  
+Menu responsivo para mobile
 
 ---
 
-## 🧩 Estrutura do Projeto
+## Estrutura do Projeto
+
+```
+busca-cep/
+│
+├── index.html
+├── assets/
+│ ├── css/
+│ │ └── styles.css
+│ └── js/
+│ ├── script.js (arquivo principal)
+│ └── modules/
+│ ├── (módulos separados por responsabilidade)
+│
+└── LICENSE
+```
+
+---
+
+## Arquitetura JavaScript
+
+O projeto foi estruturado utilizando **modularização**:
+
+- `script.js` → Arquivo principal (ponto de entrada)
+- `modules/` → Arquivos organizados por responsabilidade (ex: requisição API, manipulação DOM, validações, etc.)
+
+Isso melhora:
+
+- Escalabilidade
+- Organização
+- Manutenção do código
+- Clareza na separação de responsabilidades
+
+---
+
+## Como Executar
+
+1. Clone o repositório:
+
+git clone https://github.com/gutosavi/busca-cep.git
+
+2. Acesse a pasta:
+
+cd busca-cep
+
+3. Abra o arquivo `index.html` no navegador.
+
+---
+
+## Aprendizados Aplicados
+
+- Estruturação de projeto front-end real
+- Consumo de API externa
+- Organização com JavaScript modular
+- Manipulação dinâmica do DOM
+- Responsividade
+- Construção de layout moderno com glassmorphism
+- Estrutura próxima de aplicações escaláveis
+
+---
+
+## Próximas Melhorias
+
+- [ ] Máscara automática no campo CEP
+- [ ] Loader durante requisição
+- [ ] Deploy online (Vercel ou Netlify)
+- [ ] Refatoração futura para React + TypeScript
+
+---
+
+## Autor
+
+**Gustavo Savi**
+Desenvolvedor Frontend | HTML, CSS, JavaScript
+
+GitHub: https://github.com/gutosavi  
+LinkedIn: www.linkedin.com/in/gustavo-savi
+
+---
+
+## Licença
+
+Este projeto está sob a licença MIT.
